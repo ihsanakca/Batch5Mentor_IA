@@ -36,5 +36,26 @@ public class WebDriverFactory {
         driver.manage().window().maximize();
         return driver;
     }
+    public static WebDriver getDriver(){
+        WebDriver driver=null;
+        String browserType = BrowserTypes.browser;
+        switch (browserType.toLowerCase()){
+            case "chrome" :
+                WebDriverManager.chromedriver().setup();
+                driver=new ChromeDriver();
+                break;
+            case "edge":
+                WebDriverManager.edgedriver().setup();
+                driver=new EdgeDriver();
+                break;
+            case "firefox":
+                WebDriverManager.firefoxdriver().setup();
+                driver=new FirefoxDriver();
+                break;
+        }
+        driver.manage().window().setPosition(new Point(-1000,0));
+        driver.manage().window().maximize();
+        return driver;
+    }
 
 }
