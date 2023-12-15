@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class _3_multipleWindows {
+public class _3_MultipleWindows {
     WebDriver driver;
 
     @BeforeMethod
