@@ -1,4 +1,4 @@
-package com.kraft.tests.typeOfWebElements;
+package com.kraft.tests.day08_typeOfWebElements;
 
 import com.kraft.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
