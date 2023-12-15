@@ -178,18 +178,15 @@ public class _2_DropDowns {
 
         WebElement rice=driver.findElement(By.xpath("//div[text()='Rice']"));
         rice.click();
-
-
         actualText=dropDown.getText();
         expectedText="Rice";
 
         Assert.assertEquals(actualText,expectedText);
 
         //stale element hatası alınmaması için değişen liste tekrar locate edilmelidir.
-        options = driver.findElements(By.cssSelector(".o-igit"));
-        options.get(20).click();
 
-
+//        options = driver.findElements(By.cssSelector(".o-igit"));
+//        options.get(20).click();
 
     }
 }
