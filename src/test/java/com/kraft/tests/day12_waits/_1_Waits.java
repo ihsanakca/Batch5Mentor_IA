@@ -11,6 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class _1_Waits {
@@ -95,11 +96,12 @@ public class _1_Waits {
         WebElement startBtn = driver.findElement(By.xpath("//button[text()='Start']"));
         startBtn.click();
 
-       // WebElement hello = driver.findElement(By.xpath("//h4[text()='Hello World!']"));
+        // WebElement hello = driver.findElement(By.xpath("//h4[text()='Hello World!']"));
 
         WebDriverWait wait = new WebDriverWait(driver, 15);
 
-        WebElement hello=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[text()='Hello World!']")));
+        WebElement hello = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h4[text()='Hello " +
+                "World!']")));
 
         Assert.assertTrue(hello.isDisplayed());
 
@@ -107,7 +109,7 @@ public class _1_Waits {
     }
 
     @Test
-    public void wait_Task(){
+    public void wait_Task() {
         /**
          * Wait Task
          * navigate to https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html
@@ -122,5 +124,25 @@ public class _1_Waits {
          *  son butona tıklandıktan sonra "All Buttons Clicked" mesajının ekrana geldiğini text ile doğrulayalım.
          *  Not: Thread.sleep() metodunu kullanmayalım sadece dinamik yani akıllı wait kullanalım...
          */
+
+        driver.get("https://testpages.herokuapp.com/styled/dynamic-buttons-disabled.html");
+
+
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.tagName("button"), 4));
+
+        List<WebElement> buttons = driver.findElements(By.tagName("button"));
+
+        for (WebElement button : buttons) {
+            wait.until(ExpectedConditions.elementToBeClickable(button)).click();
+        }
+
+        WebElement message = driver.findElement(By.id("buttonmessage"));
+        String actualMessage = message.getText();
+        String expectedMessage = "All Buttons Clicked";
+
+        Assert.assertEquals(actualMessage,expectedMessage);
+
+
     }
 }
