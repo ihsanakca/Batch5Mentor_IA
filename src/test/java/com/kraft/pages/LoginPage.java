@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class LoginPage {
-    public LoginPage(){
-        PageFactory.initElements(Driver.get(),this);
-    }
+public class LoginPage extends BasePage{
+//    public LoginPage(){
+//        PageFactory.initElements(Driver.get(),this);
+//    }
 
     @FindBy(id="email")
     public WebElement emailBox;
@@ -40,9 +40,4 @@ public class LoginPage {
         loginBtn.click();
     }
 
-    public void click(WebElement element){
-       // element.click();
-        JavascriptExecutor js= (JavascriptExecutor) Driver.get();
-        js.executeScript("arguments[0].click();",element);
-    }
 }

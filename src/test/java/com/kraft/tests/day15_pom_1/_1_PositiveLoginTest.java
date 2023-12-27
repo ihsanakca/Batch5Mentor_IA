@@ -1,4 +1,4 @@
-package com.kraft.tests.pom_1;
+package com.kraft.tests.day15_pom_1;
 
 import com.kraft.pages.LoginPage;
 import com.kraft.tests.TestBase;
@@ -15,8 +15,8 @@ public class _1_PositiveLoginTest extends TestBase {
 
         loginPage.emailBox.sendKeys(ConfigurationReader.get("email"));
         loginPage.passwordBox.sendKeys(ConfigurationReader.get("password"));
-       // loginPage.loginBtn.click();
-        loginPage.click(loginPage.loginBtn);
+        loginPage.loginBtn.click();
+
     }
 
     @Test
