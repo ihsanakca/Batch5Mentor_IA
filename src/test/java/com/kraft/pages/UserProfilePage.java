@@ -34,4 +34,21 @@ public class UserProfilePage extends BasePage{
 
     }
 
+    public String addedLastExperienceRecordName(String jobTitle){
+
+        return Driver.get().findElement(By.xpath("(//span[text()='"+jobTitle+"'])[last()]")).getText();
+
+    }
+
+    public void deleteLastAddedExperienceRecord(String jobTitle){
+
+        WebElement deleteBtn =
+                Driver.get().findElement(By.xpath("(//span[text()='"+jobTitle+"'])[last()]/ancestor::tr//a"));
+
+        BrowserUtils.scrollToElement(deleteBtn);
+        BrowserUtils.clickWithJS(deleteBtn);
+
+        Driver.get().switchTo().alert().accept();
+    }
+
 }
