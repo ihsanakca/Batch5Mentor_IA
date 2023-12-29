@@ -3,24 +3,27 @@ package com.kraft.tests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.kraft.utilities.BrowserUtils;
 import com.kraft.utilities.ConfigurationReader;
 import com.kraft.utilities.Driver;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
     protected Actions actions;
     protected WebDriverWait wait;
-    protected ExtentReports report;
+    static protected ExtentReports report;
     protected ExtentHtmlReporter htmlReporter;
     protected ExtentTest extentLogger;
 
@@ -61,7 +64,18 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void tearDown()  {
+    public void tearDown(ITestResult result) throws IOException {
+        //eğer test başarısız ise
+        if (result.getStatus()==ITestResult.FAILURE){
+            //başarısız testin adını alalım
+            extentLogger.fail(result.getName());
+            //ekran görüntüsünü alalım ve kayıt edileceği yeri belirleyelim.
+            String screenShotPath= BrowserUtils.getScreenshot(result.getName());
+            //screenshotı pathi kulllanarak raporuma ekleyeyim.
+            extentLogger.addScreenCaptureFromPath(screenShotPath);
+            //log ve exception kayıtlarını da teste ekleyelim
+            extentLogger.fail(result.getThrowable());
+        }
 
         Driver.closeDriver();
     }

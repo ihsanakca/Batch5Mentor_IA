@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/ihsan/IdeaProjects/Batch5Mentor_IA/src">
+        <classes>
+            <class name="com.kraft.tests.day07_testNG_Intro._1_Before_After">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day07_testNG_Intro._2_TestNGAssertions">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day08_typeOfWebElements._1_CheckBoxes">
+                <methods>
+                    <include name="checkBoxTest"/>
+                    <include name="checkBoxTask"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day08_typeOfWebElements._2_RadioButton">
+                <methods>
+                    <include name="test1"/>
+                    <include name="task"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day08_typeOfWebElements._3_DisplayElements">
+                <methods>
+                    <include name="test1"/>
+                    <include name="task"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day08_typeOfWebElements._4_DisableElements">
+                <methods>
+                    <include name="test1"/>
+                    <include name="task"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day08_typeOfWebElements._5_GetAttributeDemo">
+                <methods>
+                    <include name="test1"/>
+                    <include name="task"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day09_listOfWebElements_dropDowns._1_ListOfElements">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day09_listOfWebElements_dropDowns._2_DropDowns">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day10_alerts_multipleWindows._1_HTML_Popups">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day10_alerts_multipleWindows._2_JS_Alerts">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day10_alerts_multipleWindows._3_MultipleWindows">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day11_frames._1_Frames">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day12_waits._1_Waits">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                    <include name="wait_Task"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day13_actions_JsExecutor_FileUpload_WebTables._1_Actions">
+                <methods>
+                    <include name="hoverOver"/>
+                    <include name="dragAndDrop"/>
+                    <include name="clickWithAction"/>
+                    <include name="rightClick"/>
+                    <include name="fillingFormWithAction"/>
+                    <include name="rightClickOpenNewTab"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day13_actions_JsExecutor_FileUpload_WebTables._2_FileUploadDownload">
+                <methods>
+                    <include name="systemPropertiesTest"/>
+                    <include name="fileUpload"/>
+                    <include name="fileDownLoad"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day13_actions_JsExecutor_FileUpload_WebTables._3_JSExecutor">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day13_actions_JsExecutor_FileUpload_WebTables._4_WebTables">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day14_properties_singleton._1_PropertiesTest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day14_properties_singleton._3_SingletonDemoTest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day14_properties_singleton._4_SingletonTest">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day14_properties_singleton._5_PositiveLoginTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day15_pom_1._1_PositiveLoginTest">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day15_pom_1._2_PositiveLoginTestWithMethod">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                    <include name="test3"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day16_pom_2._1_AddEducationTest">
+                <methods>
+                    <include name="addEducationTest"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day16_pom_2._2_SametTest">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day16_pom_2._3_AddExperienceTest">
+                <methods>
+                    <include name="addExperience"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day17_extentReports._1_ExtentReportDemo">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day17_extentReports._2_LoginTestWithExtentReport">
+                <methods>
+                    <include name="loginTest"/>
+                    <include name="loginTest_2"/>
+                </methods>
+            </class>
+            <class name="com.kraft.tests.day18_xmlRunner._1_AddEducationTestWithExtentReport">
+                <methods>
+                    <include name="addEducationTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

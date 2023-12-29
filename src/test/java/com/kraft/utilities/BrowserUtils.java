@@ -27,6 +27,7 @@ public class BrowserUtils {
         // TakesScreenshot ---> interface from selenium which takes screenshots
         TakesScreenshot ts = (TakesScreenshot) Driver.get();
 
+        //geçici dosyaya ekran resmini alalım
         File source = ts.getScreenshotAs(OutputType.FILE);
         //   ((TakesScreenshot)Driver.get()).getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
