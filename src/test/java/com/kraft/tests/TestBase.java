@@ -1,20 +1,54 @@
 package com.kraft.tests;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.kraft.utilities.ConfigurationReader;
 import com.kraft.utilities.Driver;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     protected WebDriver driver;
     protected Actions actions;
-
     protected WebDriverWait wait;
+    protected ExtentReports report;
+    protected ExtentHtmlReporter htmlReporter;
+    protected ExtentTest extentLogger;
+
+    @BeforeTest
+    public void setUpTest(){
+        report=new ExtentReports();
+
+        String projectPath=System.getProperty("user.dir");
+        String reportPath=projectPath+"/test-output/report.html";
+
+        htmlReporter=new ExtentHtmlReporter(reportPath);
+
+        report.attachReporter(htmlReporter);
+
+        htmlReporter.config().setReportName("Mentor Test Report");
+
+        report.setSystemInfo("Environment","QA");
+        report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
+        report.setSystemInfo("OS", System.getProperty("os.name"));
+        report.setSystemInfo("Test engineer", System.getProperty("user.name"));
+        report.setSystemInfo("PO", "Samet Emsen");
+    }
+
+    @AfterTest
+    public void tearDownTest(){
+        report.flush();
+
+    }
 
     @BeforeMethod
     public void setUp() {
@@ -28,6 +62,7 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown()  {
+
         Driver.closeDriver();
     }
 }
